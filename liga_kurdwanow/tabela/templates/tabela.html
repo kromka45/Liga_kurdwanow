@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+<body>
+{% load static %}
+<link rel="stylesheet" href="{% static 'style_tabela.css'%}">
+
+
+<div><header>
+
+
+
+
+
+</header></div>
+
+
+<div class="h1Class">
+    <h1>Liga Kurdwanów</h1>
+</div>
+
+
+
+
+
+<table>
+
+
+<div id="tabelaDiv">
+    <td class="tabelaDiv">L.p</td>
+    <td class="tabelaDiv">Nazwa</td>
+    <td class="tabelaDiv"> Mecze</td>
+    <td class="tabelaDiv">Punkty</td>
+    <td class="tabelaDiv">Zwyciestwa</td>
+    <td class="tabelaDiv">Remisy</td>
+    <td class="tabelaDiv">Porazki</td>
+    <td class="tabelaDiv">Bramki Z</td>
+    <td class="tabelaDiv">Bramki S</td>
+    <td class="tabelaDiv">Bilans</td>
+
+</div>
+ {% for x in zespoly  %}
+    <tr>
+
+
+        {% if forloop.counter < 4 %}
+        <div class="awansi">
+
+        <td class="awansi">{{ forloop.counter }}</td>
+        <td class="awansi">{{x.nazwa}}</td>
+        <td class="awansi">{{ x.l_meczy }}</td>
+        <td class="awansi">{{x.punkty}}</td>
+        <td class="awansi">{{ x.zwyciestwa }}</td>
+        <td class="awansi"> {{ x.remisy }}</td>
+        <td class="awansi">{{ x.porazki }}</td>
+        <td  class="awansi">{{ x.b_zdobyte }}</td>
+        <td class="awansi" >{{ x.b_stracone }}</td>
+        <td class="awansi"> {{x.bilans}}</td>
+
+        </div>
+        <div class="daneDiv2">
+        {% elif forloop.counter > 9 %}
+
+        <td class="daneDiv2">{{ forloop.counter }}</td>
+        <td class="daneDiv2">{{x.nazwa}}</td>
+        <td class="daneDiv2">{{ x.l_meczy }}</td>
+        <td class="daneDiv2">{{x.punkty}}</td>
+        <td class="daneDiv2">{{ x.zwyciestwa }}</td>
+        <td class="daneDiv2"> {{ x.remisy }}</td>
+        <td class="daneDiv2">{{ x.porazki }}</td>
+        <td class="daneDiv2">{{ x.b_zdobyte }}</td>
+        <td class="daneDiv2" >{{ x.b_stracone }}</td>
+        <td class="daneDiv2"> {{x.bilans}}</td>
+</div>
+        <div class="daneDiv3">
+        {% else %}
+
+        <td class="daneDiv3">{{ forloop.counter }}</td>
+        <td class="daneDiv3">{{x.nazwa}}</td>
+        <td class="daneDiv3">{{ x.l_meczy }}</td>
+        <td class="daneDiv3">{{x.punkty}}</td>
+        <td class="daneDiv3">{{ x.zwyciestwa }}</td>
+        <td class="daneDiv3"> {{ x.remisy }}</td>
+        <td class="daneDiv3">{{ x.porazki }}</td>
+        <td class="daneDiv3">{{ x.b_zdobyte }}</td>
+        <td class="daneDiv3" >{{ x.b_stracone }}</td>
+        <td class="daneDiv3"> {{x.bilans}}</td>
+</div>
+        {%endif%}
+
+    </tr>
+
+
+
+
+
+{% endfor %}
+
+</table>
+
+<br>
+<br>
+<a>Aktualna Kolejka</a>
+<br>
+
+
+
+<select name="post_categories" class="filter-selectbox">
+
+{% for x in zespoly %}
+    <option value="{{x.nazwa}}">{{x.nazwa}}</option>
+{% endfor %} </select>
+
+<a>VS</a>
+<select name="post_categories" class="filter-selectbox">
+{% for x in zespoly %}
+    <option value="{{x.nazwa}}">{{x.nazwa}}</option>
+{% endfor %} </select>
+
+</div>
+</body>
+</html>
