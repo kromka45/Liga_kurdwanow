@@ -1,5 +1,5 @@
 body{
-    background-color:lightyellow;
+    background-color:lightgrey;
     background-image: url('background.jpeg');
 }
 .awansi{
@@ -23,7 +23,7 @@ body{
     font-size:21px;
     allign:left;
     margin: auto;
-    width: 70%;
+    width: 40%;
     border: 11px solid lightblue;
     padding: 20px;
     position:horizontal;
