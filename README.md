@@ -17,4 +17,5 @@ V.0.0.0.2
 Do wprowadenia
 -Wpis meczow i aktualizacja bazy danych
 -dodac if w razie == punktacji na bilans bramkowy
--
+-Rozdzielic na Roman/Hub aby latwiej bylo stworzyc algorytm tworzenia kolejek
+-Dodac Favicony klubow do Tabeli
